@@ -18,7 +18,7 @@ public class PermissionManager {
             case USER:
                 return "User";
             default:
-                return "Unknown";
+                throw new IllegalArgumentException("Invalid mCurrentLevel: " + mCurrentLevel);
         }
     }
 
