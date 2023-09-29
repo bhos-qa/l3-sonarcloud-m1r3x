@@ -14,24 +14,24 @@ public class PermissionManagerTest {
 
     @Test
     public void testGetCurrentRoleName() {
-        assertEquals("User", permissionManager.getCurrentRoleName());
+        assertEquals("USER", permissionManager.getCurrentRoleName());
 
         permissionManager.setCurrentPermissionLevel(PermissionLevel.ADMIN);
-        assertEquals("Admin", permissionManager.getCurrentRoleName());
+        assertEquals("ADMIN", permissionManager.getCurrentRoleName());
 
         permissionManager.setCurrentPermissionLevel(PermissionLevel.DEVELOPER);
-        assertEquals("Developer", permissionManager.getCurrentRoleName());
+        assertEquals("DEVELOPER", permissionManager.getCurrentRoleName());
     }
 
     @Test
     public void testSetCurrentPermissionLevel() {
-        assertEquals("User", permissionManager.getCurrentRoleName());
+        assertEquals("USER", permissionManager.getCurrentRoleName());
 
         permissionManager.setCurrentPermissionLevel(PermissionLevel.DEVELOPER);
-        assertEquals("Developer", permissionManager.getCurrentRoleName());
+        assertEquals("DEVELOPER", permissionManager.getCurrentRoleName());
 
         permissionManager.setCurrentPermissionLevel(PermissionLevel.ADMIN);
-        assertEquals("Admin", permissionManager.getCurrentRoleName());
+        assertEquals("ADMIN", permissionManager.getCurrentRoleName());
     }
 
 }
