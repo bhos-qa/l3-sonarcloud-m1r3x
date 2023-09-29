@@ -2,6 +2,7 @@ import org.example.PermissionLevel;
 import org.example.PermissionManager;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PermissionManagerTest {
@@ -39,5 +40,12 @@ public class PermissionManagerTest {
         // Change the permission level to ADMIN
         permissionManager.setCurrentPermissionLevel(PermissionLevel.ADMIN);
         assertEquals("Admin", permissionManager.getCurrentRoleName());
+    }
+
+    public void testUnknownPermissionLevel() {
+        PermissionLevel unknownPermissionLevel = mock(PermissionLevel.class);
+        when(unknownPermissionLevel.toString()).thenReturn("UNKNOWN");
+        permissionManager.setCurrentPermissionLevel(unknownPermissionLevel);
+        assertEquals("Unknown", permissionManager.getCurrentRoleName());
     }
 }

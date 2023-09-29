@@ -18,9 +18,10 @@ public class PermissionManager {
             case USER:
                 return "User";
             default:
-                throw new IllegalArgumentException("Invalid mCurrentLevel: " + mCurrentLevel);
+                return "Unknown";
         }
     }
+
 
     // Method to set the current permission level
     public void setCurrentPermissionLevel(PermissionLevel level) {
